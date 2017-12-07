@@ -115,6 +115,7 @@
     <Compile Include="Dialogs\AnimalsDialog.cs" />
     <Compile Include="Dialogs\CardsDialog.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
+    <Compile Include="Extensions\EntitiesExtensions.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>

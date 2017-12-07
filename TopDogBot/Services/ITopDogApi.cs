@@ -1,16 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using System.Collections.Generic;
 
 namespace TopDogBot.Services
 {
     public interface ITopDogApi
     {
-        IEnumerable<Animal> GetAnimals();
-
         IEnumerable<Animal> GetCats();
 
         IEnumerable<Animal> GetDogs();
+
+        IEnumerable<Animal> GetDogsByName(string name);
     }
 }
