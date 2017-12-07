@@ -93,10 +93,10 @@ namespace TopDogBot.Dialogs
             var topDogApi = new TopDogApi();
 
             if (entities.IsDog())
-                return topDogApi.GetCats();
+                return topDogApi.GetDogs();
 
             if (entities.IsCat())
-                return topDogApi.GetDogs();
+                return topDogApi.GetCats();
 
             return Enumerable.Empty<Animal>();
         }
