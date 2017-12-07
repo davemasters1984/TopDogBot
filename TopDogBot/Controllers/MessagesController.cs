@@ -4,15 +4,14 @@ using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
+using TopDogBot.Dialogs;
 
 namespace TopDogBot
 {
     [BotAuthentication]
-    public class TopDogController : ApiController
+    public class MessagesController : ApiController
     {
-
-
-        public TopDogController()
+        public MessagesController()
         {
         }
 
@@ -20,13 +19,13 @@ namespace TopDogBot
         {
             if (activity.Type == ActivityTypes.Message)
             {
-
-                await Conversation.SendAsync(activity, () => new Dialogs.AnimalsListDialog());
+                await Conversation.SendAsync(activity, () => new AnimalsDialog());
             }
             else
             {
-                HandleSystemMessage(activity);
+                this.HandleSystemMessage(activity);
             }
+
             var response = Request.CreateResponse(HttpStatusCode.OK);
             return response;
         }
