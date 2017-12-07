@@ -1,22 +1,19 @@
-﻿using System.Net;
+﻿using Microsoft.Bot.Builder.Dialogs;
+using Microsoft.Bot.Connector;
+using System.Net;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Web.Http;
-using Microsoft.Bot.Builder.Dialogs;
-using Microsoft.Bot.Connector;
-using TopDogBot.Luis;
-using TopDogBot.Services;
 
 namespace TopDogBot
 {
     [BotAuthentication]
-    public class MessagesController : ApiController
+    public class TopDogController : ApiController
     {
 
 
-        public MessagesController()
+        public TopDogController()
         {
-
         }
 
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)

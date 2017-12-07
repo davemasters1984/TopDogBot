@@ -111,7 +111,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Controllers\TopDogController.cs" />
     <Compile Include="Dialogs\AnimalsListDialog.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Global.asax.cs">
