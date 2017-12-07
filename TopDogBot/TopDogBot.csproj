@@ -14,7 +14,7 @@
     <RootNamespace>TopDogBot</RootNamespace>
     <AssemblyName>Bot Application</AssemblyName>
     <TargetFrameworkVersion>v4.6</TargetFrameworkVersion>
-    <UseIISExpress>true</UseIISExpress>
+    <UseIISExpress>false</UseIISExpress>
     <IISExpressSSLPort />
     <IISExpressAnonymousAuthentication />
     <IISExpressWindowsAuthentication />
@@ -112,11 +112,19 @@
   <ItemGroup>
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\MessagesController.cs" />
+    <Compile Include="Dialogs\AnimalsListDialog.cs" />
     <Compile Include="Dialogs\RootDialog.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Luis\ILuisService.cs" />
+    <Compile Include="Luis\LuisResponse.cs" />
+    <Compile Include="Luis\LuisService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Animal.cs" />
+    <Compile Include="Services\ITopDogApi.cs" />
+    <Compile Include="Services\TopDogApi.cs" />
+    <Compile Include="WebClientBase.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config">
@@ -147,7 +155,7 @@
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>3979</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
-          <IISUrl>http://localhost:3979/</IISUrl>
+          <IISUrl>http://localhost/TopDogBot</IISUrl>
           <NTLMAuthentication>False</NTLMAuthentication>
           <UseCustomServer>False</UseCustomServer>
           <CustomServerUrl>

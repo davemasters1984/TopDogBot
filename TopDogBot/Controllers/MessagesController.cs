@@ -4,21 +4,27 @@ using System.Threading.Tasks;
 using System.Web.Http;
 using Microsoft.Bot.Builder.Dialogs;
 using Microsoft.Bot.Connector;
+using TopDogBot.Luis;
+using TopDogBot.Services;
 
 namespace TopDogBot
 {
     [BotAuthentication]
     public class MessagesController : ApiController
     {
-        /// <summary>
-        /// POST: api/Messages
-        /// Receive a message from a user and reply to it
-        /// </summary>
+
+
+        public MessagesController()
+        {
+
+        }
+
         public async Task<HttpResponseMessage> Post([FromBody]Activity activity)
         {
             if (activity.Type == ActivityTypes.Message)
             {
-                await Conversation.SendAsync(activity, () => new Dialogs.RootDialog());
+
+                await Conversation.SendAsync(activity, () => new Dialogs.AnimalsListDialog());
             }
             else
             {
